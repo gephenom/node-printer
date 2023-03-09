@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tojocky/node-printer.git"
+    "url": "https://github.com/gephenom/node-printer.git"
   },
   "devDependencies": {
     "nodeunit": "*",
@@ -28,12 +28,13 @@
     "install": "prebuild-install || node-gyp rebuild",
     "prebuild": "prebuild --all --force --strip --verbose",
     "rebuild": "node-gyp rebuild",
-    "test": "nodeunit test"
+    "test": "nodeunit test",
+    "upload": "prebuild -t 4.2.12 -r electron -a ia32 -u ${GITHUB_TOKEN}"
   },
   "binary": {
     "module_name": "node_printer",
     "module_path": "./lib/",
-    "host": "https://github.com/tojocky/node-printer/releases/download/",
+    "host": "https://github.com/gephenom/node-printer/releases/download/",
     "remote_path": "v{version}"
   },
   "licenses": [
